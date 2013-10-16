@@ -1,0 +1,37 @@
+@*Created by Arnob*@
+@model EdgeCorp.Model.ClientModel.News
+@{
+    ViewBag.Title = "Add News |";
+}
+
+<div class="content-wrapper">
+    <div class="content-main">
+        <div class="article">
+            <h2>Write News</h2>
+
+            <p>Please use the following form to write a news.</p>
+            @using (Html.BeginForm("AddNew", "News", FormMethod.Post, new {enctype ="multipart/form-data" }))
+            {
+                @Html.AntiForgeryToken();
+                @Html.ValidationSummary();
+                @Html.HiddenFor(m => m.UserId);
+                
+                <div class="form-label">@Html.LabelFor(m => m.Title)</div>
+                <div class="form-input">@Html.TextBoxFor(m => m.Title)</div>
+                
+                <div class="form-label">@Html.LabelFor(m => m.Details)</div>
+                <div class="form-input">@Html.TextAreaFor(m => m.Details)</div>
+                
+                <div class="form-label">Upload News Image Files</div>
+                <div class="form-input">
+                    <input type ="file" name="Medias[0].MediaFile" />
+                    <input type ="file" name="Medias[1].MediaFile" />
+                </div>
+                
+                <input type="submit" value="Add News" />
+
+            }
+
+         </div>
+     </div>
+</div>
