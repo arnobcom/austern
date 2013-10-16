@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EdgeCorp.Repository
+namespace Austern.Repository
 {
     public class NewsRepository:BaseRepository 
     {
