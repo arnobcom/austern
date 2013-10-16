@@ -9,7 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EdgeCorp.Services
+namespace Austern.Services
 {
     public class NewsService
     {
