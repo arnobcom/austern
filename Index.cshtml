@@ -1,0 +1,56 @@
+@*Makhlaqur Arnob*@
+@model List<EdgeCorp.Model.ClientModel.News>
+@using EdgeCorp.Extensions;
+@{
+    ViewBag.Title = "News |";
+}
+
+<div class="content-wrapper">
+    <div class="content-main">
+         <div class="leftContent">
+            
+             <div class="weather">
+            <!--Weatherzone forecast button-->
+                 <script type="text/javascript" src="http://www.showmyweather.com/weather_widget.php?int=1&type=js&country=au&state=&city=Melbourne&smallicon=0&current=1&forecast=0&background_color=f2f2f2&color=rgb(0,70,127)&width=100%&padding=5&border_width=0&border_color=000000&font_size=12&font_family=Georgia&showicons=1&measure=&d=2013-09-24"></script>
+            </div>
+            
+           
+        </div>
+        <div class="article">
+            <div class="news">
+            @if (Model.Any())
+            {
+                
+                foreach (var news in Model)
+                {
+                    
+                        
+                        if (news.Medias !=null && news.Medias.Any())
+                        {   <div class="newsSingle">
+                            @if(!string.IsNullOrWhiteSpace(news.DisplayImage))
+                            {
+                                <div class="newsImg"><a href="/news/@news.NewsId/@news.Title.GenerateSlug()"><img src="@news.DisplayImage" alt ="News" /></a></div>
+                            }
+                              <div class="newsArticle">
+                                <div class="newsTitle"> @news.Title</div>
+                                <div class="newsAuthor">Published on @news.DateCreated.ToShortDateString() by  @news.CreatedBy.FristName </div>
+                                <div class="newsDescription">
+                                    <p>@news.ShortDescription <a href="/news/@news.NewsId/@news.Title.GenerateSlug()">Read More</a></p>
+                                       
+                                </div>
+                            </div>
+                            </div>
+                      }
+                   
+                } 
+
+                
+            }
+            else
+            {
+                <p>We currently do not have any News listed here. Please visit this page again later.</p>
+            }
+            </div>
+        </div> 
+    </div>
+</div>
