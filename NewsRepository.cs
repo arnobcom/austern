@@ -1,4 +1,5 @@
 //Makhlaqur Arnob//
+//Data Access Layer for Create news, Get news and Get All news//
 using Austern.Model.ClientModel;
 using System;
 using System.Collections.Generic;
