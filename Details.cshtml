@@ -1,0 +1,28 @@
+@*Makhlaqur Arnob*@
+@model Austern.Model.ClientModel.News 
+@{
+    ViewBag.Title = "News |";
+    
+}
+
+<div class="content-wrapper">
+<div class="content-main">
+
+
+<div class="article">
+
+             @{
+                 var imageFirst = Model.Medias.FirstOrDefault().MediaId+".jpg";
+              }
+            <div class="projectFirstImage"><img src="/Images/Media/forNews/@imageFirst " /></div> <br />
+
+            <div class="projectTitle"><h3>@Model.Title</h3></div>
+            <div class="newsAuthor">Published on @Model.DateCreated.ToShortDateString() by  @Model.CreatedBy.FristName </div>
+                                
+            <div class="projectDescription"><p>@Model.Details</p></div> <br />
+            
+            <br /><br /><br />
+             
+</div>
+</div>
+</div>
