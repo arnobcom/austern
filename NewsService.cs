@@ -1,4 +1,5 @@
 //Makhlaqur Arnob//
+//Logic Layer for the Create news, Get News and Get All news//
 using Austern.Model.ClientModel;
 using Austern.Model.Enumerations;
 using Austern.Repository;
