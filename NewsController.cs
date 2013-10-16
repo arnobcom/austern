@@ -1,6 +1,6 @@
 //Created by Arnob//
-using EdgeCorp.Model.ClientModel;
-using EdgeCorp.Services;
+using Austern.Model.ClientModel;
+using Austern.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
