@@ -1,4 +1,5 @@
 //Makhlaqur Arnob//
+//News Client Model//
 using System;
 using System.Collections.Generic;
 using System.Linq;
